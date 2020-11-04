@@ -1,5 +1,9 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import logo from './logo.svg';
+import BusinessList from '../businessList/BusinessList';
+import SearchBar from '../searchBar/SearchBar';
+
 
 function App() {
   return (
