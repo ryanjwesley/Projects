@@ -33,11 +33,9 @@ doorImage2.onclick = () => currentlyPlaying && !isClicked(doorImage2) ? (doorIma
 doorImage3.onclick = () => currentlyPlaying && !isClicked(doorImage3) ? (doorImage3.src = openDoor3, playDoor(doorImage3)) : null;
 
 const startRound = () => {
-  doorImage1.src = closedDoorPath;
-  doorImage2.src = closedDoorPath;
-  doorImage3.src = closedDoorPath;
+  [doorImage1.src, doorImage2.src, doorImage3.src] = [closedDoorPath, closedDoorPath, closedDoorPath];
   numClosedDoors = 3;
-  startButton.innerHTML = "Good luck!"
+  startButton.innerHTML = "Good luck!";
   currentlyPlaying = true;
   randomChoreDoorGenerator();
 };
