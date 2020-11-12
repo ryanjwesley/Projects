@@ -8,16 +8,18 @@ import Yelp from '../../util/Yelp';
 class App extends React.Component {
   constructor(props) {
     super(props);
+    
     this.state = {
       businesses: []
     };
-    this.searchYelp.bind(this);
+    
+    this.searchYelp = this.searchYelp.bind(this);
 
   }
   
   searchYelp(term, location, sortBy) {
     Yelp.search(term, location, sortBy).then(businesses => {
-      this.setState({ businesses: businesses })
+      this.setState({businesses: businesses})
     });
   }
   
@@ -26,7 +28,7 @@ class App extends React.Component {
       <div className="App">
         <h1>Ravenous</h1>
         <SearchBar searchYelp={this.searchYelp} />
-        <BusinessList business={businesses} /> 
+        <BusinessList businesses={this.state.businesses} /> 
       </div>
     );
   }
