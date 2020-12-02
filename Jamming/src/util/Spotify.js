@@ -2,7 +2,7 @@ const clientId = '4d63f333363447e783f1a27576d744ac';
 const redirectUri = 'http://localhost:3000/';
 let accessToken = '';
 
-const Soptify = {
+const Spotify = {
     getAccessToken() {
        if(accessToken) {
            return accessToken;
@@ -27,7 +27,7 @@ const Soptify = {
     },
 
     search(term) {
-        const accessToken = Soptify.getAccessToken();
+        const accessToken = Spotify.getAccessToken();
         return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, 
         { 
             headers: {Authorization: `Bearer ${accessToken}`}
@@ -49,4 +49,4 @@ const Soptify = {
     }
 }
 
-export default Soptify;
+export default Spotify;
