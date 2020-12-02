@@ -43,7 +43,7 @@ class App extends React.Component {
 
   savePlaylist() {
     const trackUris = this.state.playlistTracks.map(track => track.uri);
-    Spotify.savePlaylist(this.state.playlistName, trackUris).then(() => {
+    Spotify.savePlayList(this.state.playlistName, trackUris).then(() => {
       this.setState({
         playlistName: 'New Playlist',
         playlistTracks: []
@@ -57,36 +57,6 @@ class App extends React.Component {
     })
   }
 
-  savePlayList(name, trackUris) {
-    if (!name || !trackUris.length) {
-      return;
-    }
-
-    const accessToken = Spotify.getAccessToken();
-    const headers = { Authorization: `Bearer ${accessToken}` };
-    let userId;
-
-    return fetch('https://api.spotify.com/v1/me', { headers: headers }
-    ).then(response => response.json()
-    ).then(jsonResponse => {
-      userId = jsonResponse.id;
-      return fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, 
-      {
-        headers: headers,
-        method: 'POST',
-        body: JSON.stringify({ name: name})
-      }).then(response => response.json()
-      ).then(jsonResponse => {
-        const playlistId = jsonResponse.id;
-        return fetch(`https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`, {
-          headers: headers,
-          method: 'POST',
-          body: JSON.stringify({ uris: trackUris })
-        })
-      })
-    })
-  }
-  
   render() {
     return (
       <div>
