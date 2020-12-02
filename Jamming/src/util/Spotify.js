@@ -27,7 +27,7 @@ const Soptify = {
     },
 
     search(term) {
-        const accessToken = this.getAccessToken();
+        const accessToken = Soptify.getAccessToken();
         return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, 
         { 
             headers: {Authorization: `Bearer ${accessToken}`}
