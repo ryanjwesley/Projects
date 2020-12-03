@@ -1,5 +1,5 @@
 const clientId = '4d63f333363447e783f1a27576d744ac';
-const redirectUri = 'http://localhost:3000/';
+const redirectUri = 'http://Jamming_RyanWesley.surge.sh';
 let accessToken = '';
 
 const Spotify = {
