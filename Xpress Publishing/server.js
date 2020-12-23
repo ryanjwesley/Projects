@@ -5,11 +5,11 @@ const errorHandler = require('errorhandler');
 const morgan = require('morgan');
 
 const app = express();
-const port = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4000;
 
 app.use(bodyParser.json());
 app.use(cors());
-app.use(errorhandler());
+app.use(errorHandler());
 app.use(morgan('dev'));
 
 app.listen(PORT, () => {
