@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const errorHandler = require('errorhandler');
 const morgan = require('morgan');
-const apiRouter = require('./api/apiRouter');
+const apiRouter = require('./api/api');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
