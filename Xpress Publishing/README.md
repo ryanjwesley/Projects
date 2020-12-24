@@ -18,7 +18,7 @@ You can view all of this functionality in action in the video below:
 
 ## How To Begin
 
-To start, download the starting code for this project <a href="https://s3.amazonaws.com/codecademy-content/programs/build-apis/projects/capstone-project-1-x-press-publishing.zip" target="_blank">here</a>. After downloading the zip folder, double click it to uncompress it and access the contents of this project.
+To start, download the starting code for this project <a href="https://s3.amazonaws.com/codecademy-content/PRO/skill-paths/backend-javascript/projects/x-press-publishing/capstone-project-1-x-press-publishing-start.zip" target="_blank">here</a>. After downloading the zip folder, double click it to uncompress it and access the contents of this project.
 
 To view your local version of the site, open **index.html** in Google Chrome.
 
